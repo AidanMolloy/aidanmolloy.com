@@ -25,7 +25,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
         border: "3px solid",
         borderRadius: "3px",
         boxShadow: 24,
-        p: 4,
+        p: { xs: 3, md: 4 },
         borderColor:
           entry?.type === "experience"
             ? "primary.main"
@@ -138,6 +138,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 <Typography
                   component="span"
                   sx={{
+                    fontSize: { xs: "15px", md: "19px" },
                     display: { xs: "block", sm: "inline" },
                     fontWeight: "400",
                     color: "#666"
@@ -170,7 +171,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
         sx={{
           mt: 2,
           maxHeight: { xs: "40vh", md: "50vh", lg: "60vh" },
-          overflowX: "scroll"
+          overflowY: "scroll"
         }}
         id="modal-modal-description"
       >
