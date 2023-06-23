@@ -79,7 +79,7 @@ export default function TimelineEntry(props: {
               <Typography
                 variant="h5"
                 component="h1"
-                sx={{ fontSize: "24px", fontWeight: "500" }}
+                sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: "500" }}
               >
                 {props.entry.title}
               </Typography>
@@ -95,7 +95,7 @@ export default function TimelineEntry(props: {
                   variant="h6"
                   component="h2"
                   sx={{
-                    fontSize: { xs: "20px", md: "18px", lg: "20px" },
+                    fontSize: { xs: "16px", md: "18px", lg: "20px" },
                     fontWeight: "400",
                     color: "#3d3d3d",
                     mr: "16px"
@@ -116,7 +116,7 @@ export default function TimelineEntry(props: {
                       variant="h6"
                       component="h3"
                       sx={{
-                        fontSize: { xs: "18px", md: "16px", lg: "18px" },
+                        fontSize: { xs: "14px", md: "16px", lg: "18px" },
                         fontWeight: "300",
                         color: "#666",
                         mr: "12px"
@@ -128,6 +128,7 @@ export default function TimelineEntry(props: {
                     <Typography
                       component="span"
                       sx={{
+                        fontSize: { xs: "14px", md: "16px", lg: "18px" },
                         display: { xs: "block", sm: "inline" },
                         fontWeight: "400",
                         color: "#666"
@@ -145,7 +146,7 @@ export default function TimelineEntry(props: {
                     variant="h6"
                     component="h3"
                     sx={{
-                      fontSize: { xs: "18px", md: "16px", lg: "18px" },
+                      fontSize: { xs: "14px", md: "16px", lg: "18px" },
                       fontWeight: "300",
                       color: "#666"
                     }}
