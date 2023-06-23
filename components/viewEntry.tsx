@@ -76,7 +76,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
             id="modal-modal-title"
             variant="h6"
             component="h2"
-            sx={{ fontSize: "26px", fontWeight: "500" }}
+            sx={{ fontSize: { xs: "21px", md: "26px" }, fontWeight: "500" }}
           >
             {entry?.title}
             <IconButton
@@ -104,7 +104,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               variant="h6"
               component="h2"
               sx={{
-                fontSize: "21px",
+                fontSize: { xs: "18px", md: "21px" },
                 fontWeight: "400",
                 color: "#3d3d3d",
                 mr: "16px"
@@ -126,7 +126,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                   variant="h6"
                   component="h3"
                   sx={{
-                    fontSize: "19px",
+                    fontSize: { xs: "15px", md: "19px" },
                     fontWeight: "300",
                     color: "#666",
                     mr: "12px"
@@ -155,7 +155,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 variant="h6"
                 component="h3"
                 sx={{
-                  fontSize: "19px",
+                  fontSize: { xs: "15px", md: "19px" },
                   fontWeight: "300",
                   color: "#666"
                 }}

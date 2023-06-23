@@ -92,5 +92,5 @@ description:
   ### Course Description:
 
   >The BSc in Computer Science is a full-time four-year degree course that encompasses all aspects of computer systems (both software and hardware) and ICT (information and communication technology), including software development, database technology, computer networks, operating systems, algorithms, security, web technology and applications. - [UCC.ie](https://www.ucc.ie/en/ck401/)"
-skills: ["python", "html", "css", "c", "cpp", "java", "mongodb"]
+skills: ["python", "html", "css", "c", "java", "mongodb"]
 ---

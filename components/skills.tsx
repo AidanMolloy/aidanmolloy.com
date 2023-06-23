@@ -49,7 +49,7 @@ export default function SkillIcon(props: {
           sx={{
             pl: props.large ? 0.8 : 0.6,
             py: props.large ? 2 : 0,
-            fontSize: props.large ? "16px" : "14px"
+            fontSize: props.large ? { xs: "14px", md: "16px" } : "14px"
           }}
         />
       ))
