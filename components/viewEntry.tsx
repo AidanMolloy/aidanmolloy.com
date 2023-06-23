@@ -53,7 +53,14 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
         <EntryCategory type={entry?.type} dot size={"large"} />
       </Box>
 
-      <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box
+        sx={{
+          display: "flex",
+          alignItems: "center",
+          boxShadow: "0 3px 6px -6px rgba(0,0,0,0.3)",
+          pb: { xs: 1, md: 2 }
+        }}
+      >
         {entry?.logo ? (
           <Image
             src={`/companies/${entry?.logo}`}
@@ -167,18 +174,43 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
           </Box>
         </Box>
       </Box>
-      <Typography
+      <Box
         sx={{
-          mt: 2,
-          maxHeight: { xs: "40vh", md: "50vh", lg: "60vh" },
-          overflowY: "scroll"
+          position: "relative",
+          "&:after": {
+            content: '" "',
+            position: "absolute",
+            right: 0,
+            bottom: 0,
+            left: 0,
+            height: "30px",
+            background:
+              "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
+          }
         }}
-        id="modal-modal-description"
       >
-        <ReactMarkdown linkTarget={"_blank"}>
-          {entry?.description}
-        </ReactMarkdown>
-      </Typography>
+        <Typography
+          sx={{
+            maxHeight: { xs: "40vh", md: "50vh", lg: "60vh" },
+            overflow: "-moz-scrollbars-vertical",
+            overflowY: "scroll",
+            "&::-webkit-scrollbar": {
+              WebkitAppearance: "none",
+              width: "7px"
+            },
+            "&::-webkit-scrollbar-thumb": {
+              borderRadius: "4px",
+              backgroundColor: "rgba(0,0,0,.5)",
+              WebkitBoxShadow: "0 0 1px rgba(255,255,255,.5)"
+            }
+          }}
+          id="modal-modal-description"
+        >
+          <ReactMarkdown linkTarget={"_blank"}>
+            {entry?.description}
+          </ReactMarkdown>
+        </Typography>
+      </Box>
 
       {entry?.skills && (
         <Box
