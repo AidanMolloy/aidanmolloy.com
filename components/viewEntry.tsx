@@ -169,7 +169,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
       <Typography
         sx={{
           mt: 2,
-          maxHeight: "60vh",
+          maxHeight: { xs: "50vh", lg: "60vh" },
           overflowX: "scroll"
         }}
         id="modal-modal-description"

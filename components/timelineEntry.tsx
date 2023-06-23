@@ -177,7 +177,8 @@ export default function TimelineEntry(props: {
                 textOverflow: "ellipsis",
                 display: "-webkit-box",
                 WebkitLineClamp: "3",
-                WebkitBoxOrient: "vertical"
+                WebkitBoxOrient: "vertical",
+                maxHeight: "120px"
               }}
             >
               <ReactMarkdown linkTarget={"_blank"}>
