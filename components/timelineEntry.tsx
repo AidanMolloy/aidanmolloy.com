@@ -178,7 +178,7 @@ export default function TimelineEntry(props: {
                 display: "-webkit-box",
                 WebkitLineClamp: "3",
                 WebkitBoxOrient: "vertical",
-                maxHeight: "120px"
+                maxHeight: "110px"
               }}
             >
               <ReactMarkdown linkTarget={"_blank"}>
