@@ -210,41 +210,49 @@ export default function TimelineEntry(props: {
                 </ReactMarkdown>
               </Typography>
             </Box>
-          </Box>
-          {height > 112 && (
-            <Box
-              sx={{
-                width: "100%",
-                textAlign: "right",
-                position: "relative",
-                mt: "-24px",
-                "&:before": {
-                  content: '" "',
+            {height > 112 && (
+              <Box
+                sx={{
                   position: "absolute",
                   right: 0,
-                  bottom: 0,
-                  left: 0,
-                  height: "40px",
-                  background:
-                    "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
-                }
-              }}
-            >
-              <Button
-                variant="text"
-                sx={{
-                  fontSize: { xs: "15px", sm: "16px", lg: "17px" },
-                  p: { xs: "0 0 0 5px", sm: "0 0 0 7px" },
-                  backgroundColor: "white",
-                  "&:hover": {
-                    backgroundColor: "rgba(250,250,255,0.9)"
-                  }
+                  bottom: "-5px",
+                  width: "100%"
                 }}
               >
-                Show more
-              </Button>
-            </Box>
-          )}
+                <Box
+                  sx={{
+                    width: "100%",
+                    textAlign: "right",
+                    position: "relative",
+                    "&:before": {
+                      content: '" "',
+                      position: "absolute",
+                      right: 0,
+                      bottom: 0,
+                      left: 0,
+                      height: "50px",
+                      background:
+                        "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
+                    }
+                  }}
+                >
+                  <Button
+                    variant="text"
+                    sx={{
+                      fontSize: { xs: "15px", sm: "16px", lg: "17px" },
+                      p: { xs: "0 2px 0 5px", sm: "0 2px 0 7px" },
+                      backgroundColor: "white",
+                      "&:hover": {
+                        backgroundColor: "rgba(245,245,255,0.9)"
+                      }
+                    }}
+                  >
+                    Show more
+                  </Button>
+                </Box>
+              </Box>
+            )}
+          </Box>
 
           {props.entry.skills && (
             <Box
