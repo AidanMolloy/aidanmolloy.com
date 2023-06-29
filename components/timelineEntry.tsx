@@ -10,16 +10,24 @@ import EntryCategory from "./entryCategory";
 import Image from "next/image";
 import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import FormatDate, { DateBetween } from "./date";
 import SkillIcon from "./skills";
 import { ReactMarkdown } from "react-markdown/lib/react-markdown";
+import Button from "@mui/material/Button";
 
 export default function TimelineEntry(props: {
   entry: any;
   setSelectedEntry: any;
 }) {
   const [depth, setDepth] = useState(1);
+  const [height, setHeight] = useState(0);
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (ref.current) setHeight(ref.current.clientHeight);
+  }, [height]);
+
   return (
     <TimelineItem onClick={() => props.setSelectedEntry(props.entry)}>
       <TimelineOppositeContent sx={{ display: { xs: "none", sm: "block" } }}>
@@ -56,7 +64,7 @@ export default function TimelineEntry(props: {
         >
           <FormatDate date={props.entry.date} />
         </Typography>
-        <Paper sx={{ p: "8px 16px" }} elevation={depth}>
+        <Paper sx={{ p: "8px 14px" }} elevation={depth}>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             {props.entry.logo ? (
               <Image
@@ -79,7 +87,10 @@ export default function TimelineEntry(props: {
               <Typography
                 variant="h5"
                 component="h1"
-                sx={{ fontSize: { xs: "20px", md: "24px" }, fontWeight: "500" }}
+                sx={{
+                  fontSize: { xs: "16px", sm: "20px", md: "24px" },
+                  fontWeight: "500"
+                }}
               >
                 {props.entry.title}
               </Typography>
@@ -95,7 +106,12 @@ export default function TimelineEntry(props: {
                   variant="h6"
                   component="h2"
                   sx={{
-                    fontSize: { xs: "16px", md: "18px", lg: "20px" },
+                    fontSize: {
+                      xs: "14px",
+                      sm: "16px",
+                      md: "18px",
+                      lg: "20px"
+                    },
                     fontWeight: "400",
                     color: "#3d3d3d",
                     mr: "16px"
@@ -116,7 +132,12 @@ export default function TimelineEntry(props: {
                       variant="h6"
                       component="h3"
                       sx={{
-                        fontSize: { xs: "14px", md: "16px", lg: "18px" },
+                        fontSize: {
+                          xs: "12px",
+                          sm: "14px",
+                          md: "16px",
+                          lg: "18px"
+                        },
                         fontWeight: "300",
                         color: "#666",
                         mr: "12px"
@@ -128,8 +149,14 @@ export default function TimelineEntry(props: {
                     <Typography
                       component="span"
                       sx={{
-                        fontSize: { xs: "14px", md: "16px", lg: "18px" },
-                        display: { xs: "block", sm: "inline" },
+                        fontSize: {
+                          xs: "12px",
+                          sm: "14px",
+                          md: "16px",
+                          lg: "18px"
+                        },
+                        display: "flex",
+                        alignItems: "center",
                         fontWeight: "400",
                         color: "#666"
                       }}
@@ -146,7 +173,12 @@ export default function TimelineEntry(props: {
                     variant="h6"
                     component="h3"
                     sx={{
-                      fontSize: { xs: "14px", md: "16px", lg: "18px" },
+                      fontSize: {
+                        xs: "12px",
+                        sm: "14px",
+                        md: "16px",
+                        lg: "18px"
+                      },
                       fontWeight: "300",
                       color: "#666"
                     }}
@@ -160,48 +192,76 @@ export default function TimelineEntry(props: {
           <Box
             sx={{
               position: "relative",
-              "&:after": {
-                content: '" "',
-                position: "absolute",
-                right: 0,
-                bottom: 0,
-                left: 0,
-                height: "40px",
-                background:
-                  "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
-              }
+              overflow: "hidden",
+              maxHeight: { xs: "94px", sm: "101px", md: "106px", lg: "123px" }
             }}
           >
-            <Typography
+            <Box ref={ref}>
+              <Typography
+                variant="body1"
+                component="p"
+                sx={{
+                  mt: { xs: "-15px", md: "-10px", lg: "0" },
+                  fontSize: { xs: "16px", sm: "17px", lg: "18px" }
+                }}
+              >
+                <ReactMarkdown linkTarget={"_blank"}>
+                  {props.entry.description}
+                </ReactMarkdown>
+              </Typography>
+            </Box>
+          </Box>
+          {height > 112 && (
+            <Box
               sx={{
-                overflow: "hidden",
-                textOverflow: "ellipsis",
-                display: "-webkit-box",
-                WebkitLineClamp: "3",
-                WebkitBoxOrient: "vertical",
-                maxHeight: "110px"
+                width: "100%",
+                textAlign: "right",
+                position: "relative",
+                mt: "-24px",
+                "&:before": {
+                  content: '" "',
+                  position: "absolute",
+                  right: 0,
+                  bottom: 0,
+                  left: 0,
+                  height: "40px",
+                  background:
+                    "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
+                }
               }}
             >
-              <ReactMarkdown linkTarget={"_blank"}>
-                {props.entry.description}
-              </ReactMarkdown>
-            </Typography>
-          </Box>
+              <Button
+                variant="text"
+                sx={{
+                  fontSize: { xs: "15px", sm: "16px", lg: "17px" },
+                  p: { xs: "0 0 0 5px", sm: "0 0 0 7px" },
+                  backgroundColor: "white",
+                  "&:hover": {
+                    backgroundColor: "rgba(250,250,255,0.9)"
+                  }
+                }}
+              >
+                Show more
+              </Button>
+            </Box>
+          )}
+
           {props.entry.skills && (
             <Box
               sx={{
                 pt: 0.5,
                 ml: -0.5,
                 display: "flex",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
+                width: "100%"
               }}
             >
               {props.entry.skills.map((skill: string) => (
                 <>
                   <Box
-                    key={skill}
+                    key={`${skill} pill`}
                     sx={{
-                      display: { xs: "none", sm: "inline" },
+                      display: { xs: "none", md: "inline" },
                       m: 0.5
                     }}
                   >
@@ -210,7 +270,7 @@ export default function TimelineEntry(props: {
                   <Box
                     key={skill}
                     sx={{
-                      display: { xs: "inline", sm: "none" },
+                      display: { xs: "inline", md: "none" },
                       m: 0.5
                     }}
                   >
