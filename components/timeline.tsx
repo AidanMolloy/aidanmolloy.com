@@ -9,7 +9,6 @@ import Tab from "@mui/material/Tab";
 import Box from "@mui/material/Box";
 import EntryCategory from "./entryCategory";
 import Entries from "./entries";
-import Modal from "@mui/material/Modal";
 import { useScrollPosition } from "../hooks/useScrollPosition";
 import ViewEntry from "./viewEntry";
 
@@ -38,14 +37,9 @@ export default function AidanTimeline() {
   };
   return (
     <Box>
-      <Modal
-        open={selectedEntry !== null}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
+      {selectedEntry !== null && (
         <ViewEntry entry={selectedEntry} handleClose={handleClose} />
-      </Modal>
+      )}
       <Box
         sx={{
           borderBottom: 1,
