@@ -19,7 +19,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
       <Dialog
         fullScreen
         open={entry !== null}
-        onClose={entry.handleClose}
+        onClose={props.handleClose}
         sx={{
           display: { xs: "inherit", sm: "none" },
           "& .MuiDialog-paper": {
@@ -37,9 +37,9 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
         <Box
           sx={{
             position: "absolute" as "absolute",
-            width: "calc(100% - 8px)",
-            height: "calc(100vh - 8px)",
-            m: "4px",
+            width: "calc(100% - 10px)",
+            height: "calc(100vh - 10px)",
+            m: "5px",
             backgroundColor: "background.paper"
           }}
         >
@@ -48,8 +48,8 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               width: "35px",
               position: "absolute",
               transform: "translate(-50%, -50%)",
-              top: "12px",
-              left: "12px",
+              top: "10px",
+              left: "10px",
               boxShadow: "0 10px 10px 0 rgba(0,0,0,0.3)",
               borderRadius: "50%",
               p: 0,
@@ -98,7 +98,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 {entry?.title}
                 <IconButton
                   aria-label="close"
-                  onClick={entry.handleClose}
+                  onClick={props.handleClose}
                   sx={{
                     position: "absolute",
                     right: 0,
@@ -207,17 +207,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 maxHeight: entry?.skills
                   ? "calc(100vh - 240px)"
                   : "calc(100vh - 200px)",
-                overflow: "-moz-scrollbars-vertical",
-                overflowY: "scroll",
-                "&::-webkit-scrollbar": {
-                  WebkitAppearance: "none",
-                  width: "7px"
-                },
-                "&::-webkit-scrollbar-thumb": {
-                  borderRadius: "4px",
-                  backgroundColor: "rgba(0,0,0,.5)",
-                  WebkitBoxShadow: "0 0 1px rgba(255,255,255,.5)"
-                }
+                overflowY: "auto"
               }}
               id="modal-modal-description"
             >
@@ -247,7 +237,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
       </Dialog>
       <Modal
         open={entry !== null}
-        onClose={entry.handleClose}
+        onClose={props.handleClose}
         sx={{ display: { xs: "none", sm: "inherit" } }}
       >
         <Box
