@@ -22,12 +22,6 @@ description:
   **Overall: First Class Honours (79%)**
 
 
-  ### Top 10 Modules
-
-
-  Web Development II (99%), Intermediate Programming (94%), Logic Design (94%), Operating Systems I (94%) Introduction to Programming (93%), Information Storage & Management II (92%), AI II(89%), Ethical Hacking & Web Security (89%), Algorithms & Data Structures I (88%), Information Storage & Management I (87%)
-
-
 ### Best Modules by Year
 
 **4th Year Modules:**
