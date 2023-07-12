@@ -51,9 +51,9 @@ export default function Intro() {
         }}
       >
         <p>
-          <b>Currently</b>: SRE at{" "}
-          <a href="https://teamwork.com" target="_blank">
-            Teamwork.com
+          <b>Currently</b>: SWE at{" "}
+          <a href="https://google.com" target="_blank">
+            Google
           </a>{" "}
           | Founder of{" "}
           <a href="https://plugnexus.com" target="_blank">
@@ -61,15 +61,15 @@ export default function Intro() {
           </a>
           .
           <br />
-          <b>Previously</b>: SWE at{" "}
+          <b>Previously</b>: SRE at{" "}
+          <a href="https://teamwork.com" target="_blank">
+            Teamwork.com
+          </a>{" "}
+          | SWE at{" "}
           <a href="https://get.clay.it/" target="_blank">
             Clay.it
           </a>{" "}
-          (Acquired by{" "}
-          <a href="https://wyblo.com" target="_blank">
-            Wyblo.com
-          </a>
-          ) | 3x Intern at{" "}
+          | 3x Intern at{" "}
           <a href="https://sre.google/" target="_blank">
             Google SRE
           </a>
