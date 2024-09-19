@@ -30,8 +30,8 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 ? "success.main"
                 : entry?.type === "awards"
                 ? "warning.main"
-                : "black"
-          }
+                : "black",
+          },
         }}
       >
         <Box
@@ -40,7 +40,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
             width: "calc(100% - 10px)",
             height: "calc(100vh - 10px)",
             m: "5px",
-            backgroundColor: "background.paper"
+            backgroundColor: "background.paper",
           }}
         >
           <Box
@@ -53,7 +53,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               boxShadow: "0 10px 10px 0 rgba(0,0,0,0.3)",
               borderRadius: "50%",
               p: 0,
-              m: 0
+              m: 0,
             }}
           >
             <EntryCategory type={entry?.type} dot size={"small"} />
@@ -63,7 +63,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               display: "flex",
               alignItems: "center",
               boxShadow: "0 3px 6px -6px rgba(0,0,0,0.3)",
-              p: "16px 8px"
+              p: "16px 8px",
             }}
           >
             {entry?.logo ? (
@@ -82,7 +82,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 ml: "15px",
                 display: "flex",
                 flexDirection: "column",
-                width: "100%"
+                width: "100%",
               }}
             >
               <Typography
@@ -92,7 +92,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 sx={{
                   fontSize: { xs: "18px", sm: "21px", md: "26px" },
                   fontWeight: "500",
-                  pr: "20px"
+                  pr: "20px",
                 }}
               >
                 {entry?.title}
@@ -103,7 +103,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     position: "absolute",
                     right: 0,
                     top: 0,
-                    color: (theme) => theme.palette.grey[500]
+                    color: (theme) => theme.palette.grey[500],
                   }}
                 >
                   <CloseIcon />
@@ -114,7 +114,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                   display: "flex",
                   flexDirection: { xs: "column", sm: "row" },
                   justifyContent: "space-between",
-                  width: "100%"
+                  width: "100%",
                 }}
               >
                 <Typography
@@ -124,7 +124,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     fontSize: { xs: "16px", sm: "18px", md: "21px" },
                     fontWeight: "400",
                     color: "#3d3d3d",
-                    mr: "16px"
+                    mr: "16px",
                   }}
                 >
                   {entry?.organisation}
@@ -136,7 +136,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: { xs: "none", sm: "flex-end" },
-                      flexWrap: "wrap"
+                      flexWrap: "wrap",
                     }}
                   >
                     <Typography
@@ -146,7 +146,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                         fontSize: { xs: "14px", sm: "15px", md: "19px" },
                         fontWeight: "300",
                         color: "#666",
-                        mr: "12px"
+                        mr: "12px",
                       }}
                     >
                       <FormatDate date={entry?.dateFrom} /> -{" "}
@@ -159,7 +159,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                         display: "flex",
                         alignItems: "center",
                         fontWeight: "400",
-                        color: "#666"
+                        color: "#666",
                       }}
                     >
                       <Typography component="span">· &nbsp;</Typography>
@@ -176,7 +176,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     sx={{
                       fontSize: { xs: "14px", sm: "15px", md: "19px" },
                       fontWeight: "300",
-                      color: "#666"
+                      color: "#666",
                     }}
                   >
                     <FormatDate date={entry?.date} />
@@ -197,8 +197,8 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 left: 0,
                 height: "30px",
                 background:
-                  "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
-              }
+                  "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)",
+              },
             }}
           >
             <Typography
@@ -207,7 +207,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 maxHeight: entry?.skills
                   ? "calc(100vh - 240px)"
                   : "calc(100vh - 200px)",
-                overflowY: "auto"
+                overflowY: "auto",
               }}
               id="modal-modal-description"
             >
@@ -223,7 +223,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 pt: 0.5,
                 ml: -0.5,
                 display: "flex",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
               }}
             >
               {entry?.skills.map((skill: string) => (
@@ -260,7 +260,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 ? "success.main"
                 : entry?.type === "awards"
                 ? "warning.main"
-                : "black"
+                : "black",
           }}
         >
           <Box
@@ -274,7 +274,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               boxShadow: "0 10px 10px 0 rgba(0,0,0,0.3)",
               borderRadius: "50%",
               p: 0,
-              m: 0
+              m: 0,
             }}
           >
             <EntryCategory type={entry?.type} dot size={"large"} />
@@ -285,7 +285,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
               display: "flex",
               alignItems: "center",
               boxShadow: "0 3px 6px -6px rgba(0,0,0,0.3)",
-              pb: { xs: 1, md: 2 }
+              pb: { xs: 1, md: 2 },
             }}
           >
             {entry?.logo ? (
@@ -303,7 +303,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 ml: "15px",
                 display: "flex",
                 flexDirection: "column",
-                width: "100%"
+                width: "100%",
               }}
             >
               <Typography
@@ -320,7 +320,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     position: "absolute",
                     right: 8,
                     top: 8,
-                    color: (theme) => theme.palette.grey[500]
+                    color: (theme) => theme.palette.grey[500],
                   }}
                 >
                   <CloseIcon />
@@ -331,7 +331,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                   display: "flex",
                   flexDirection: { xs: "column", sm: "row" },
                   justifyContent: "space-between",
-                  width: "100%"
+                  width: "100%",
                 }}
               >
                 <Typography
@@ -341,7 +341,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     fontSize: { xs: "18px", md: "21px" },
                     fontWeight: "400",
                     color: "#3d3d3d",
-                    mr: "16px"
+                    mr: "16px",
                   }}
                 >
                   {entry?.organisation}
@@ -353,7 +353,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: { xs: "none", sm: "flex-end" },
-                      flexWrap: "wrap"
+                      flexWrap: "wrap",
                     }}
                   >
                     <Typography
@@ -363,7 +363,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                         fontSize: { xs: "15px", md: "19px" },
                         fontWeight: "300",
                         color: "#666",
-                        mr: "12px"
+                        mr: "12px",
                       }}
                     >
                       <FormatDate date={entry?.dateFrom} /> -{" "}
@@ -375,7 +375,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                         fontSize: { xs: "15px", md: "19px" },
                         display: { xs: "block", sm: "inline" },
                         fontWeight: "400",
-                        color: "#666"
+                        color: "#666",
                       }}
                     >
                       <Typography component="span">· &nbsp;</Typography>
@@ -392,7 +392,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                     sx={{
                       fontSize: { xs: "15px", md: "19px" },
                       fontWeight: "300",
-                      color: "#666"
+                      color: "#666",
                     }}
                   >
                     <FormatDate date={entry?.date} />
@@ -412,8 +412,8 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 left: 0,
                 height: "30px",
                 background:
-                  "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)"
-              }
+                  "linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,255) 100%)",
+              },
             }}
           >
             <Typography
@@ -423,13 +423,13 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 overflowY: "scroll",
                 "&::-webkit-scrollbar": {
                   WebkitAppearance: "none",
-                  width: "7px"
+                  width: "7px",
                 },
                 "&::-webkit-scrollbar-thumb": {
                   borderRadius: "4px",
                   backgroundColor: "rgba(0,0,0,.5)",
-                  WebkitBoxShadow: "0 0 1px rgba(255,255,255,.5)"
-                }
+                  WebkitBoxShadow: "0 0 1px rgba(255,255,255,.5)",
+                },
               }}
               id="modal-modal-description"
             >
@@ -445,7 +445,7 @@ export default function ViewEntry(props: { entry: any; handleClose: any }) {
                 pt: 0.5,
                 ml: -0.5,
                 display: "flex",
-                flexWrap: "wrap"
+                flexWrap: "wrap",
               }}
             >
               {entry?.skills.map((skill: string) => (

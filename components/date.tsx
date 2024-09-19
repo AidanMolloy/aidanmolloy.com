@@ -16,7 +16,7 @@ const differenceInMonths = (a: Date, b: Date) =>
   Math.max(
     Math.floor((a.getTime() - b.getTime()) / (1000 * 60 * 60 * 24 * 30.4167)),
     0
-  );
+  ) + 1;
 
 export function DateBetween(props: { dateFrom: Date; dateTo: Date | null }) {
   let months;

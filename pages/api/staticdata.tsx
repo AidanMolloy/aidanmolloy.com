@@ -36,7 +36,11 @@ export default async function handler(req: any, res: any) {
           logo: matterResult.data.logo ? matterResult.data.logo : null,
           type: entryDirectory,
           description: matterResult.data.description,
-          skills: matterResult.data.skills ? matterResult.data.skills : null
+          skills: matterResult.data.skills
+            ? matterResult.data.skills.map((skill: string) =>
+                skill.toLowerCase()
+              )
+            : null,
         };
       })
     );
@@ -54,6 +58,6 @@ export default async function handler(req: any, res: any) {
     }
   });
   res.status(200).json({
-    entries
+    entries,
   });
 }
